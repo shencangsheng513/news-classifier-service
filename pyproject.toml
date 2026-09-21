@@ -8,7 +8,8 @@ dependencies = [
     "pydantic>=2.9",
     "pydantic-settings>=2.6",
     "uvicorn[standard]>=0.32",
-    "scikit-learn>=1.5",
+    # 钉死：烤进镜像的 joblib 工件 pickle 版本须与运行时一致（>=1.5 会让构建时漂到最新版）
+    "scikit-learn==1.9.1",
     "joblib>=1.4",
     "numpy>=1.26",
 ]
